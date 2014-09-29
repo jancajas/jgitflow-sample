@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sonatype.mvnexbook</groupId>
+  <version>1.0</version>
+  <artifactId>mvnex-examples</artifactId>
+  <packaging>pom</packaging>
+  <name>Maven by Example, Example Code</name>
+  <description>Example Code for Maven: By Example</description>
+  
+  <url>http://sonatype.com/book</url>
+
+ <modules>
+    <module>ch-simple</module>
+    <module>ch-custom</module>
+    <module>ch-simple-web</module>
+  </modules> 
+  
+  <build>
+    <finalName>mvnexbook-examples-${project.version}</finalName>
+    <plugins>
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-javadoc-plugin</artifactId>
+               <version>2.9</version>
+            </plugin>    
+                        <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m4.3</version>
+                <configuration>
+                    <!-- see https://bitbucket.org/atlassian/jgit-flow/wiki/goals.wiki -->
+                    <allowSnapshots>true</allowSnapshots>
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>development</developBranchName>
+                        <featureBranchPrefix>feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>blither-</versionTagPrefix>
+                    </flowInitContext>
+                </configuration>
+            </plugin>
+      <plugin>      
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>project</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>examples</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>
