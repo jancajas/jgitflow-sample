@@ -9,4 +9,9 @@
   <modules>
     <module>simple-webapp</module>
   </modules>
+  <parent>
+  <groupId>org.sonatype.mvnexbook</groupId>
+  <version>1.1-SNAPSHOT</version>
+  <artifactId>mvnex-examples</artifactId>
+  </parent>
 </project>
