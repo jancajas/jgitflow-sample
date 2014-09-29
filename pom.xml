@@ -79,12 +79,12 @@
   
       <distributionManagement>
         <repository>
-            <id>pocketmath-maven-release-repo2</id>
+            <id>pocketmath-maven-release-repo</id>
             <name>S3 Release Repository</name>
             <url>s3://jan-maven-repo/release</url>
         </repository>
         <snapshotRepository>
-            <id>pocketmath-maven-snapshot-repo2</id>
+            <id>pocketmath-maven-snapshot-repo</id>
             <name>S3 Snapshot Repository</name>
             <url>s3://jan-maven-repo/snapshot</url>
         </snapshotRepository>
