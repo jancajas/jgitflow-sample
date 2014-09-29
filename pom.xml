@@ -39,6 +39,8 @@
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                         <versionTagPrefix>blither-</versionTagPrefix>
                     </flowInitContext>
+                    <!--goalPrefix>jgitflow</goalPrefix-->
+                    <pushReleases>true</pushReleases>
                 </configuration>
             </plugin>
       <plugin>      
@@ -60,5 +62,12 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  <dependency>
+    <groupId>external.atlassian.jgitflow</groupId>
+    <artifactId>jgitflow-maven-plugin</artifactId>
+    <version>1.0-m4.3</version>
+  </dependency>
+  </dependencies>
   
 </project>
