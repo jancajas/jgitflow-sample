@@ -12,7 +12,7 @@
 
  <modules>
     <module>ch-simple</module>
-    <module>ch-custom</module>
+    <!--module>ch-custom</module-->
     <module>ch-simple-web</module>
   </modules> 
   
