@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mvnexbook</groupId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0</version>
   <artifactId>mvnex-examples</artifactId>
   <packaging>pom</packaging>
   <name>Maven by Example, Example Code</name>
@@ -62,6 +62,13 @@
         </executions>
       </plugin>
     </plugins>
+            <extensions>
+            <extension> <!-- for S3 maven repo to work -->
+                <groupId>org.springframework.build.aws</groupId>
+                <artifactId>org.springframework.build.aws.maven</artifactId>
+                <version>3.0.0.RELEASE</version>
+            </extension>
+        </extensions>
   </build>
   <dependencies>
   <dependency>
@@ -70,5 +77,18 @@
     <version>1.0-m4.3</version>
   </dependency>
   </dependencies>
+  
+      <distributionManagement>
+        <repository>
+            <id>pocketmath-maven-release-repo2</id>
+            <name>S3 Release Repository</name>
+            <url>s3://jan-maven-repo/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>pocketmath-maven-snapshot-repo2</id>
+            <name>S3 Snapshot Repository</name>
+            <url>s3://jan-maven-repo/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
   
 </project>
