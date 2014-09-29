@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mvnexbook</groupId>
-  <version>1.0</version>
+  <version>1.5</version>
   <artifactId>mvnex-examples</artifactId>
   <packaging>pom</packaging>
   <name>Maven by Example, Example Code</name>
@@ -12,12 +12,11 @@
 
  <modules>
     <module>ch-simple</module>
-    <module>ch-custom</module>
     <module>ch-simple-web</module>
   </modules> 
   
   <build>
-    <finalName>mvnexbook-examples-${project.version}</finalName>
+    <finalName>mvnexbook-examples-${project.version} </finalName>
     <plugins>
             <plugin>
                <groupId>org.apache.maven.plugins</groupId>
@@ -39,6 +38,9 @@
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                         <versionTagPrefix>blither-</versionTagPrefix>
                     </flowInitContext>
+                    <!--goalPrefix>jgitflow</goalPrefix-->
+                    <pushReleases>true</pushReleases>
+                    <pushFeatures>true</pushFeatures>
                 </configuration>
             </plugin>
       <plugin>      
@@ -59,6 +61,33 @@
         </executions>
       </plugin>
     </plugins>
+            <extensions>
+            <extension> <!-- for S3 maven repo to work -->
+                <groupId>org.springframework.build.aws</groupId>
+                <artifactId>org.springframework.build.aws.maven</artifactId>
+                <version>3.0.0.RELEASE</version>
+            </extension>
+        </extensions>
   </build>
+  <dependencies>
+  <dependency>
+    <groupId>external.atlassian.jgitflow</groupId>
+    <artifactId>jgitflow-maven-plugin</artifactId>
+    <version>1.0-m4.3</version>
+  </dependency>
+  </dependencies>
+  
+      <distributionManagement>
+        <repository>
+            <id>pocketmath-maven-release-repo</id>
+            <name>S3 Release Repository</name>
+            <url>s3://jan-maven-repo/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>pocketmath-maven-snapshot-repo</id>
+            <name>S3 Snapshot Repository</name>
+            <url>s3://jan-maven-repo/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
   
 </project>
