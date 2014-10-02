@@ -88,5 +88,5 @@ nbactions.xml
 *.project
 *.classpath
 *.settings
-**/.idea/*
+.idea/
 *.iml
