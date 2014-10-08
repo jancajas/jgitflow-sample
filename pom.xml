@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mvnexbook</groupId>
-  <version>1.8.2</version>
+  <version>1.9</version>
   <artifactId>mvnex-examples</artifactId>
   <packaging>pom</packaging>
   <name>Maven by Example, Example Code</name>
@@ -36,14 +36,15 @@
                         <featureBranchPrefix>feature-</featureBranchPrefix>
                         <releaseBranchPrefix>release-</releaseBranchPrefix>
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                        <versionTagPrefix>blither-</versionTagPrefix>
+                        <versionTagPrefix>blither-</versionTagPrefix>                        
                     </flowInitContext>
                     <!--goalPrefix>jgitflow</goalPrefix-->
+                    <pushHotfixes>true</pushHotfixes>
                     <pushReleases>true</pushReleases>
                     <pushFeatures>true</pushFeatures>
                 </configuration>
             </plugin>
-      <plugin>      
+      <!--plugin>      
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
           <descriptorRefs>
@@ -59,7 +60,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin!-->
     </plugins>
             <extensions>
             <extension> <!-- for S3 maven repo to work -->
