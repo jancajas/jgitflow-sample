@@ -90,3 +90,4 @@ nbactions.xml
 *.settings
 .idea/
 *.iml
+git.properties
