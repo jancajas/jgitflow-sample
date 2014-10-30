@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mavenbook.simple</groupId>
   <artifactId>parent</artifactId>
-  <version>1.13</version>
+  <version>1.18</version>
   <packaging>pom</packaging>
   <name>Simple Project Chapter Parent Project</name>
   <url>http://sonatype.com/book</url>
@@ -12,7 +12,7 @@
   </modules>
   <parent>
 		<groupId>org.sonatype.mvnexbook</groupId>
-  <version>1.13</version>
+  <version>1.18</version>
   <artifactId>mvnex-examples</artifactId>
   </parent>
 </project>
