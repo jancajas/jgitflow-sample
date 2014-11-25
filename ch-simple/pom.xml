@@ -3,11 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mavenbook.simple</groupId>
   <artifactId>parent</artifactId>
-<<<<<<< HEAD
-  <version>1.18</version>
-=======
+
   <version>1.8.2</version>
->>>>>>> refs/heads/hotfix-1.8.2
+
   <packaging>pom</packaging>
   <name>Simple Project Chapter Parent Project</name>
   <url>http://sonatype.com/book</url>
@@ -16,11 +14,8 @@
   </modules>
   <parent>
 		<groupId>org.sonatype.mvnexbook</groupId>
-<<<<<<< HEAD
-  <version>1.18</version>
-=======
+
   <version>1.8.2</version>
->>>>>>> refs/heads/hotfix-1.8.2
   <artifactId>mvnex-examples</artifactId>
   </parent>
 </project>
