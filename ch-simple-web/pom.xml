@@ -3,7 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.mavenbook.simpleweb</groupId>
   <artifactId>parent</artifactId>
-  <version>1.18</version>
+
+  <version>1.8.2</version>
+
   <packaging>pom</packaging>
   <name>Simple Web Chapter Parent Project</name>
   <modules>
@@ -11,7 +13,7 @@
   </modules>
   <parent>
   <groupId>org.sonatype.mvnexbook</groupId>
-  <version>1.18</version>
+  <version>1.8.2</version>
   <artifactId>mvnex-examples</artifactId>
   </parent>
       <build>
